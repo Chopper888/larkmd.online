@@ -49,6 +49,14 @@ export interface Theme {
     margin: string;
     lineHeight: string;
   };
+  mark: {
+    backgroundColor: string;
+    fontWeight: string;
+    color: string;
+    padding: string;
+    borderRadius: string;
+    margin: string;
+  };
   image: {
     maxWidth: string;
     margin: string;
@@ -200,6 +208,14 @@ export const defaultTheme: Theme = {
   paragraph: {
     margin: '1.2em 0',
     lineHeight: '1.75',
+  },
+  mark: {
+    backgroundColor: '#fff2c8',
+    fontWeight: 'bold',
+    color: '#333333',
+    padding: '2px 6px',
+    borderRadius: '4px',
+    margin: '0 2px',
   },
   image: {
     maxWidth: '100%',
