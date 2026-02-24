@@ -33,6 +33,25 @@ turndownService.addRule('strong', {
   }
 });
 
+// 自定义飞书高亮背景的转换规则
+turndownService.addRule('mark', {
+  filter: function (node) {
+    const el = node as HTMLElement;
+    // 识别飞书带有背景色的 span 标签
+    if (el.nodeName === 'SPAN' && (el.style.backgroundColor || el.style.background)) {
+      return true;
+    }
+    // 同时也兼容标准的 mark 标签
+    if (el.nodeName === 'MARK') return true;
+    return false;
+  },
+  replacement: function (content) {
+    // 如果内容为空，就不加标签
+    if (!content.trim()) return '';
+    return `<mark>${content}</mark>`;
+  }
+});
+
 // 获取单元格对齐方式
 function getCellAlignment(cell: HTMLElement): string {
   const style = cell.getAttribute('style') || '';
