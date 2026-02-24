@@ -48,7 +48,7 @@ turndownService.addRule('mark', {
   replacement: function (content) {
     // 如果内容为空，就不加标签
     if (!content.trim()) return '';
-    return `<mark>${content}</mark>`;
+    return `~~${content}~~`;
   }
 });
 
