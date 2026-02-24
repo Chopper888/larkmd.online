@@ -12,11 +12,6 @@ interface PreviewProps {
   content: string;
 }
 
-interface ComponentProps {
-  children?: ReactNode;
-  [key: string]: any;
-}
-
 const Preview: React.FC<PreviewProps> = ({ content }) => {
   const { currentTheme } = useTheme();
   const styles = generateInlineStyles(currentTheme);
@@ -102,9 +97,9 @@ const Preview: React.FC<PreviewProps> = ({ content }) => {
       </a>
     ),
     hr: () => <hr style={styles.hr} />,
-    strong: ({ children }: { children: React.ReactNode }) => <strong style={styles.strong}>{children}</strong>,
-    em: ({ children }: { children: React.ReactNode }) => <em style={styles.em}>{children}</em>,
-    del: ({ children }: { children: React.ReactNode }) => (
+    strong: ({ children }: any) => <strong style={styles.strong}>{children}</strong>,
+    em: ({ children }: any) => <em style={styles.em}>{children}</em>,
+    del: ({ children }: any) => (
       <span style={{ backgroundColor: '#fff2c8', fontWeight: 'bold', color: '#333333', padding: '2px 6px', borderRadius: '4px', margin: '0 2px' }}>
         {children}
       </span>
