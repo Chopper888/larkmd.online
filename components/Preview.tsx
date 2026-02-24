@@ -102,9 +102,9 @@ const Preview: React.FC<PreviewProps> = ({ content }) => {
       </a>
     ),
     hr: () => <hr style={styles.hr} />,
-    strong: ({ children }: any) => <strong style={styles.strong}>{children}</strong>,
-    em: ({ children }: any) => <em style={styles.em}>{children}</em>,
-    del: ({ children }: any) => (
+    strong: ({ children }: { children: React.ReactNode }) => <strong style={styles.strong}>{children}</strong>,
+    em: ({ children }: { children: React.ReactNode }) => <em style={styles.em}>{children}</em>,
+    del: ({ children }: { children: React.ReactNode }) => (
       <span style={{ backgroundColor: '#fff2c8', fontWeight: 'bold', color: '#333333', padding: '2px 6px', borderRadius: '4px', margin: '0 2px' }}>
         {children}
       </span>
