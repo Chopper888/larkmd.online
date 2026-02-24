@@ -105,7 +105,7 @@ const Preview: React.FC<PreviewProps> = ({ content }) => {
     strong: ({ children }: ComponentProps) => <strong style={styles.strong}>{children}</strong>,
     em: ({ children }: ComponentProps) => <em style={styles.em}>{children}</em>,
     del: ({ children }: ComponentProps) => (
-      <span style={styles.mark || { backgroundColor: '#fff2c8', fontWeight: 'bold', color: '#333333', padding: '2px 6px', borderRadius: '4px', margin: '0 2px' }}>
+      <span style={{ backgroundColor: '#fff2c8', fontWeight: 'bold', color: '#333333', padding: '2px 6px', borderRadius: '4px', margin: '0 2px' }}>
         {children}
       </span>
     ),
