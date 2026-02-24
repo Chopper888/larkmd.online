@@ -102,15 +102,14 @@ const Preview: React.FC<PreviewProps> = ({ content }) => {
       </a>
     ),
     hr: () => <hr style={styles.hr} />,
-    strong: ({ children }: ComponentProps) => <strong style={styles.strong}>{children}</strong>,
-    em: ({ children }: ComponentProps) => <em style={styles.em}>{children}</em>,
-    del: ({ children }: ComponentProps) => (
+    strong: ({ children }: any) => <strong style={styles.strong}>{children}</strong>,
+    em: ({ children }: any) => <em style={styles.em}>{children}</em>,
+    del: ({ children }: any) => (
       <span style={{ backgroundColor: '#fff2c8', fontWeight: 'bold', color: '#333333', padding: '2px 6px', borderRadius: '4px', margin: '0 2px' }}>
         {children}
       </span>
     ),
   };
-
   return (
     <div className="markdown-body" style={styles.div}>
       <ReactMarkdown 
